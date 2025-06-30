@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+@theme{
+  --color-royalblue-100: #01295f;
+  --color-selective-yellow: #ffb30f;
+  --color-selective-yellow-hover: #e79e1f;
+  --color-serulian-30: #b0dbfa;
+}
