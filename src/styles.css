@@ -7,6 +7,7 @@
   --color-selective-yellow-hover: #e79e1f;
   --color-serulian-30: #b0dbfa;
   --color-serulian-100: #2b9def;
+  --color-serulian-hover: #307BEB;
   --color-royalblue-30: #6383af;
 }
 
@@ -23,6 +24,10 @@
   @apply ml-2 font-semibold text-[var(--color-royalblue-100)]
 }
 
-.submit-form-button{
-  @apply bg-[var(--color-serulian-100)] text-black font-bold py-2 px-4 rounded-lg mt-6 hover:bg-[var(--color-selective-yellow-hover)] transition-colors duration-300;
+.submit-form-button-blue{
+  @apply bg-[var(--color-serulian-100)] text-black font-bold py-2 px-4 rounded-lg mt-6 hover:bg-[var(--color-serulian-hover)] transition-colors duration-300;
 }
+.submit-form-button-yellow{
+  @apply bg-[var(--color-selective-yellow)] text-black font-bold py-2 px-4 rounded-lg mt-6 hover:bg-[var(--color-selective-yellow)] transition-colors duration-300;
+}
+
