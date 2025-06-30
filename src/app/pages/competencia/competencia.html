@@ -1,0 +1,76 @@
+<form class="flex flex-col mx-auto mt-10 items-center">
+  <h1 class="text-3xl font-bold">Ingresa datos de la competencia 🎯</h1>
+  <article class="flex">
+    <section flex class="flex flex-col w-full ml-4">
+      <div class ="input-and-label-container">
+        <label for="fechaInicio" class="label-form">Fecha de Inicio:</label>
+        <input
+          type="date"
+          id="fechaInicio"
+          name="fechaInicio"
+          class="input-form"
+          placeholder="Escribe la fecha de inicio"
+        />
+      </div>
+      <div class="input-and-label-container">
+        <label for="fechaTermino" class="label-form">Fecha de Termino:</label>
+        <input
+          type="date"
+          id="fechaTermino"
+          name="fechaTermino"
+          class="input-form"
+          placeholder="Escribe la fecha de termino"
+        />
+      </div>
+      <div class="input-and-label-container">
+        <label for="puntaje" class="label-form">Puntaje:</label>
+        <input
+          type="number"
+          id="puntaje"
+          name="puntaje"
+          class="input-form"
+          placeholder="Puntaje de clasificatorio"
+        />
+      </div>
+      <div class="input-and-label-container">
+        <label for="posicion" class="label-form">Posición:</label>
+        <input
+          type="number"
+          id="posicion"
+          name="posicion"
+          class="input-form"
+          placeholder="Posicion alcanzada de clasificatorio"
+        />
+      </div>
+      <div class="input-and-label-container">
+        <label for="posicionROI" class="label-form">Posición ROI:</label>
+        <input
+          type="number"
+          id="posicionROI"
+          name="posicionROI"
+          class="input-form"
+          placeholder="Posición alcanzada en ROI"
+        />
+      </div>
+      <div class="input-and-label-container">
+        <label for="maximoROI" class="label-form">Máximo ROI:</label>
+        <input
+          type="number"
+          id="maximoROI"
+          name="maximoROI"
+          class="input-form"
+          placeholder="Máximo puntaje acumulado ROI"
+        />
+      </div>
+    </section>
+  </article>
+
+  <article class="">
+    <button
+      type="submit"
+      class="submit-form-button"
+    >
+      Registrar competencia
+    </button>
+  </article>
+</form>
