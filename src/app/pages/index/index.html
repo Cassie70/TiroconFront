@@ -1,10 +1,18 @@
 <div class = "flex flex-col mx-auto mt-10 w-1/2 items-center">
-  
+
   <h1 class="text-4xl">Busca a un arquero 🎯</h1>
+  <article class="w-full mt-4 max-w-2xl">
+    <input [(ngModel)] ="inputValue" type="text" class="border border-gray-300 rounded p-2  mt-4 w-full" placeholder="Escribe el nombre del arquero...">
 
-  <input [(ngModel)] ="inputValue" type="text" class="border border-gray-300 rounded p-2  mt-4 w-full" placeholder="Escribe el nombre del arquero...">
+    <app-info-card-simple class="mt-5 w-full"></app-info-card-simple>
+  </article>
 
-  <app-info-card-simple class="mt-5 w-full"></app-info-card-simple>
+  <article class="flex flex-col w-full max-w-2xl mt-5 mb-4">
+    <div class="flex flex-col items-center mt-10">
+      <p class="font-light">¿No encontraste al competidor que querias?</p>
+      <a class ="submit-form-button-yellow" routerLink="/registro"> Registra un nuevo arquero</a>
+    </div>
+  </article>
 
   <div class="flex flex-col items-center mt-10 ">
     <p class="font-light">¿No encontraste al competidor que querias?</p>
