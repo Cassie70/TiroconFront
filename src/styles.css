@@ -22,3 +22,7 @@
 .label-form{
   @apply ml-2 font-semibold text-[var(--color-royalblue-100)]
 }
+
+.submit-form-button{
+  @apply bg-[var(--color-serulian-100)] text-black font-bold py-2 px-4 rounded-lg mt-6 hover:bg-[var(--color-selective-yellow-hover)] transition-colors duration-300;
+}
