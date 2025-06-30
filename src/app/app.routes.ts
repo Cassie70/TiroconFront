@@ -4,6 +4,7 @@ import { Registro } from './pages/registro/registro';
 import {Competencia} from './pages/competencia/competencia';
 import { Entrenamiento } from './pages/entrenamiento/entrenamiento';
 import {Arco} from './pages/arco/arco';
+import {Invitar} from './pages/invitar/invitar';
 
 
 export const routes: Routes = [
@@ -12,5 +13,6 @@ export const routes: Routes = [
   {path: 'registro', component: Registro},
   {path: 'competencia', component: Competencia},
   {path: 'entrenamiento', component: Entrenamiento},
-  {path: 'arco', component: Arco}
+  {path: 'arco', component: Arco},
+  {path: 'invitar', component: Invitar}
 ];
