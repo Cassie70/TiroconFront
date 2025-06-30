@@ -6,4 +6,19 @@
   --color-selective-yellow: #ffb30f;
   --color-selective-yellow-hover: #e79e1f;
   --color-serulian-30: #b0dbfa;
+  --color-serulian-100: #2b9def;
+  --color-royalblue-30: #6383af;
+}
+
+.input-form{
+  @apply border ml-5 rounded-xl p-2 w-full border-[color:var(--color-royalblue-30)] placeholder-[var(--color-royalblue-30)]
+
+}
+
+.input-and-label-container{
+  @apply flex items-center w-full mt-2;
+}
+
+.label-form{
+  @apply ml-2 font-semibold text-[var(--color-royalblue-100)]
 }

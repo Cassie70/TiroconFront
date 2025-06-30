@@ -1,96 +1,127 @@
-<form class="flex flex-col mx-auto mt-10 items-center">
+<form class="flex flex-col mx-auto mt-10 items-center max-w-xl">
   <h1 class="text-3xl font-bold">Ingresa Datos Personales 🎯</h1>
-  <article class="flex">
-    <div class="flex flex-col">
+  <article class="flex flex-col md:flex-row mt-4 w-full">
+    <div class="flex flex-col items-center">
       <img
         src="https://cdn-icons-png.flaticon.com/512/1077/1077042.png"
         alt="Registro"
         class="w-24 h-24 mx-auto mt-4"
       />
-      <input type="file" class = "block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4
-  file:rounded-full file:border-0
-  file:text-sm file:font-semibold
-  file:bg-[var(--color-selective-yellow)]
-  file:text-black
-  hover:file:bg-[var(--color-selective-yellow-hover)]"/>
-    </div>
-    <section flex class="flex flex-col w-full ml-4">
-          <div>
-      <label for="nombre" class="font-semibold mt-4">Nombre:</label>
       <input
-        type="text"
-        id="nombre"
-        name="nombre"
-        class="border border-gray-300 rounded-xl p-1 mt-8"
-        placeholder="Escribe tu nombre"
+        type="file"
+        class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-[var(--color-selective-yellow)] file:text-black hover:file:bg-[var(--color-selective-yellow-hover)] mt-4"
       />
     </div>
-    <div>
-      <label for="apellido" class="font-semibold mt-4">Apellido:</label>
-      <input
-        type="text"
-        id="apellido"
-        name="apellido"
-        class="border border-gray-300 rounded-xl p-1 mt-8"
-        placeholder="Escribe tu apellido"
-      />
-    </div>
-    <div>
-    <label for="email" class="font-semibold mt-4">Email:</label>
-    <input
-      type="email"
-      id="email"
-      name="email"
-      class="border border-gray-300 rounded-xl p-1 mt-8"
-      placeholder="Escribe tu email"
-    />
-    </div>
+
+    <section class="flex flex-col w-full md:ml-4 mt-4 md:mt-0">
+      <!-- Nombre -->
+      <div class="input-and-label-container">
+        <label for="nombre" class="label-form">Nombre:</label>
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          class="input-form"
+          placeholder="Escribe tu nombre"
+        />
+      </div>
+
+      <!-- Apellido -->
+      <div class="input-and-label-container">
+        <label for="apellido" class="label-form">Apellido:</label>
+        <input
+          type="text"
+          id="apellido"
+          name="apellido"
+          class="input-form"
+          placeholder="Escribe tu apellido"
+        />
+      </div>
+
+      <!-- Email -->
+      <div class="input-and-label-container">
+        <label for="email" class="label-form">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="input-form"
+          placeholder="Escribe tu email"
+        />
+      </div>
     </section>
   </article>
 
-  <article class="">
+  <article class="flex flex-col w-full mt-6">
     <h1 class="text-3xl font-bold mt-4 text-center">
       Ingresa datos del arco 🏹
     </h1>
-    <label for="tipo" class="font-semibold mt-4">Tipo</label>
-    <input
-      type="text"
-      id="tipo"
-      name="tipo"
-      class="border border-gray-300 rounded-xl p-1 mt-8"
-      placeholder="Escribe el tipo de arco"
-    />
-    <label for="marca" class="font-semibold mt-4">Marca</label>
-    <input
-      type="text"
-      id="marca"
-      name="marca"
-      class="border bordergray-300 rounded-xl p-1 mt-8"
-      placeholder="Escribe la marca del arco"
-    />
-    <label for="libraje" class="font-semibold mt-4">Libraje</label>
-    <input
-      type="number"
-      id="libraje"
-      name="libraje"
-      class="border border-gray-300 rounded-xl p-1 mt-8"
-      placeholder="Escribe el libraje del arco"
-    />
-    <label for="apertura" class="font-semibold mt-4">Apertura</label>
-    <input
-      type="number"
-      id="apertura"
-      name="apertura"
-      class="border border-gray-300 rounded-xl p-1 mt-8"
-      placeholder="Escribe la apertura del arco"
-    />
-    <label for="peso" class="font-semibold mt-4">Peso</label>
-    <input
-      type="number"
-      id="peso"
-      name="peso"
-      class="border border-gray-300 rounded-xl p-1 mt-8"
-      placeholder="Escribe el peso del arco"
-    />
+
+    <!-- Tipo -->
+    <div class="input-and-label-container">
+      <label for="tipo" class="label-form">Tipo:</label>
+      <input
+        type="text"
+        id="tipo"
+        name="tipo"
+        class="input-form"
+        placeholder="Escribe el tipo de arco"
+      />
+    </div>
+
+    <!-- Marca -->
+    <div class="input-and-label-container">
+      <label for="marca" class="label-form">Marca:</label>
+      <input
+        type="text"
+        id="marca"
+        name="marca"
+        class="input-form"
+        placeholder="Escribe la marca del arco"
+      />
+    </div>
+
+    <!-- Libraje -->
+    <div class="input-and-label-container">
+      <label for="libraje" class="label-form">Libraje:</label>
+      <input
+        type="number"
+        id="libraje"
+        name="libraje"
+        class="input-form"
+        placeholder="Escribe el libraje del arco"
+      />
+    </div>
+
+    <!-- Apertura -->
+    <div class="input-and-label-container">
+      <label for="apertura" class="label-form">Apertura:</label>
+      <input
+        type="number"
+        id="apertura"
+        name="apertura"
+        class="input-form"
+        placeholder="Escribe la apertura del arco"
+      />
+    </div>
+
+    <!-- Peso -->
+    <div class="input-and-label-container">
+      <label for="peso" class="label-form">Peso:</label>
+      <input
+        type="number"
+        id="peso"
+        name="peso"
+        class="input-form"
+        placeholder="Escribe el peso del arco"
+      />
+    </div>
   </article>
+
+  <button
+    type="submit"
+    class="bg-[var(--color-serulian-100)] text-black font-bold py-2 px-4 rounded-lg mt-6 hover:bg-[var(--color-selective-yellow-hover)] transition-colors duration-300"
+  >
+    Registrar un nuevo arquero🏹
+  </button>
 </form>
