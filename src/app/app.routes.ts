@@ -6,6 +6,7 @@ import { Entrenamiento } from './pages/entrenamiento/entrenamiento';
 import {Arco} from './pages/arco/arco';
 import {Invitar} from './pages/invitar/invitar';
 import {InfoArquero} from './pages/info-arquero/info-arquero';
+import {EditarArquero} from './pages/editar-arquero/editar-arquero'; 
 
 
 export const routes: Routes = [
@@ -16,5 +17,7 @@ export const routes: Routes = [
   {path: 'entrenamiento', component: Entrenamiento},
   {path: 'arco', component: Arco},
   {path: 'invitar', component: Invitar},
-  {path: 'info-arquero/:idArquero', component: InfoArquero}
+  {path: 'info-arquero/:idArquero', component: InfoArquero},
+  {path: 'editar-arquero', component: EditarArquero} //queda pendiente agregar el idArquero
+
 ];

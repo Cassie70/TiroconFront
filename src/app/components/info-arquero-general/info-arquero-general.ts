@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ArqueroModel } from '../../services/arquero.model';
 
+
 @Component({
   selector: 'app-info-arquero-general',
   imports: [],

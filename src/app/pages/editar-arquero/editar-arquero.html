@@ -1,0 +1,71 @@
+<form class="flex flex-col mx-auto mt-10 items-center max-w-xl">
+  <h1 class="text-3xl font-bold">Edita Datos Personales 🎯</h1>
+  <article class="flex flex-col md:flex-row mt-4 w-full">
+    <div class="flex flex-col items-center">
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/1077/1077042.png"
+        alt="Registro"
+        class="w-24 h-24 mx-auto mt-4"
+      />
+      <input
+        type="file"
+        class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-[var(--color-selective-yellow)] file:text-black hover:file:bg-[var(--color-selective-yellow-hover)] mt-4"
+      />
+    </div>
+
+    <section class="flex flex-col w-full md:ml-4 mt-4 md:mt-0">
+      <!-- Nombre -->
+      <div class="input-and-label-container">
+        <label for="nombre" class="label-form">Nombre:</label>
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          class="input-form"
+          placeholder={{arquero.nombre}}
+        />
+      </div>
+
+      <!-- Apellido -->
+      <div class="input-and-label-container">
+        <label for="apellido" class="label-form">Apellido:</label>
+        <input
+          type="text"
+          id="apellido"
+          name="apellido"
+          class="input-form"
+          placeholder={{arquero.apellido}}
+        />
+      </div>
+
+      <!-- Email -->
+      <div class="input-and-label-container">
+        <label for="email" class="label-form">Categoria:</label>
+        <input
+          type="categoria"
+          id="categoria"
+          name="categoria"
+          class="input-form"
+          placeholder={{arquero.categoria}}
+        />
+      </div>
+      <div class="input-and-label-container">
+        <label for="email" class="label-form">Asociación:</label>
+        <input
+          type="text"
+          id="asociacion"
+          name="asociacion"
+          class="input-form"
+          placeholder={{arquero.asociacion}}  
+        />
+      </div>
+    </section>
+  </article>
+    
+  <button
+    type="submit"
+    class="submit-form-button-blue"
+  >
+    Guardar🏹
+  </button>
+</form>

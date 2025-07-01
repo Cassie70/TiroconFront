@@ -5,11 +5,12 @@ import { ArqueroService } from '../../services/arquero-service';
 import { ArqueroModel } from '../../services/arquero.model';
 import { Input } from '@angular/core';
 import { ChangeDetectorRef } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-info-arquero',
   imports: [
-    InfoArqueroGeneral, InfoArqueroTablas
+    InfoArqueroGeneral, InfoArqueroTablas, RouterLink
   ],
   templateUrl: './info-arquero.html',
   styleUrl: './info-arquero.css'
