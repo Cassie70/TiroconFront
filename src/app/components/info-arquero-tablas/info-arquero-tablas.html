@@ -18,8 +18,12 @@
 
 
 <article class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-12 justify-center px-32 ">
+
+   @for (arco of arquero.arcos ;track $index){<app-card-entrenamiento></app-card-entrenamiento>}
+  @for (arco of arquero.arcos ;track $index){<app-card-arco></app-card-arco>} 
+@for (arco of arquero.arcos ;track $index){<app-card-competencia></app-card-competencia>}
  
- 
+
 
 </article>
 
