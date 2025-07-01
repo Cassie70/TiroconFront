@@ -13,9 +13,9 @@ export const routes: Routes = [
   {path: '', redirectTo: 'index', pathMatch: 'full'},
   {path: 'index', component: Index},
   {path: 'registro', component: Registro},
-  {path: 'competencia', component: Competencia},
-  {path: 'entrenamiento', component: Entrenamiento},
-  {path: 'arco', component: Arco},
+  {path: 'competencia/:idArquero', component: Competencia},
+  {path: 'entrenamiento/:idArquero', component: Entrenamiento},
+  {path: 'arco/:idArquero', component: Arco},
   {path: 'invitar', component: Invitar},
   {path: 'info-arquero/:idArquero', component: InfoArquero},
   {path: 'editar-arquero/idArquero', component: EditarArquero} //queda pendiente agregar el idArquero

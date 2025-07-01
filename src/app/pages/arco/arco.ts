@@ -3,6 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { ArcoService} from '../../services/arco-service';
 import { ArcoModel } from '../../services/arco.model';
+import { Input } from '@angular/core';
+import { OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-arco',
@@ -10,7 +12,8 @@ import { ArcoModel } from '../../services/arco.model';
   templateUrl: './arco.html',
   styleUrl: './arco.css'
 })
-export class Arco {
+export class Arco implements OnInit {
+  @Input() idArquero?: number;
 
   arco: ArcoModel = {
     tipo: '',
@@ -20,6 +23,16 @@ export class Arco {
     peso: 0,
     arquero: {
       idArquero: 201
+    }
+  }
+
+  ngOnInit(): void {
+    console.log('ID del arquero:', this.idArquero);
+
+    if (this.idArquero) {
+      this.arco.arquero.idArquero = this.idArquero;
+    } else {
+      console.error('ID del arquero no proporcionado');
     }
   }
 

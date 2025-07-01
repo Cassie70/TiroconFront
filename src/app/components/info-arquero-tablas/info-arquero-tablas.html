@@ -1,16 +1,16 @@
 <article class="grid grid-cols-1 md:grid-cols-3 gap-6 justify-center px-32">
   <div class="flex flex-col justify-center mx-6 text-align-center">
-    <a routerLink="/entrenamiento" class="submit-form-button-blue">
+    <a [routerLink]="['/entrenamiento',arquero.idArquero]" class="submit-form-button-blue">
         Registrar un entrenamiento
     </a>
   </div>
   <div class="flex flex-col justify-center mx-6 text-align-center">
-    <a routerLink="/arco" class="submit-form-button-yellow">
+    <a [routerLink]="['/arco',arquero.idArquero]" class="submit-form-button-yellow">
         Registrar un nuevo arco
     </a>
   </div>
   <div class="flex flex-col justify-center mx-6 text-align-center">
-    <a routerLink="/competencia" class="submit-form-button-black">
+    <a  [routerLink]="['/competencia',arquero.idArquero]" class="submit-form-button-black">
         Registrar una nueva competencia
     </a>
   </div>

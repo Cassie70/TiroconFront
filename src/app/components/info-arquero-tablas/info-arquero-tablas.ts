@@ -12,10 +12,7 @@ import { ArqueroModel } from '../../services/arquero.model';
   styleUrl: './info-arquero-tablas.css'
 })
 export class InfoArqueroTablas {
-@Input() idArquero?: number;
-
-  // Datos del arquero
-  arquero: ArqueroModel = {
+  @Input() arquero: ArqueroModel = {
     idArquero: 0,
     nombre: '',
     apellido: '',
@@ -26,4 +23,6 @@ export class InfoArqueroTablas {
     entrenamientos: [],
     competencias: []
   };
+
+  
 }

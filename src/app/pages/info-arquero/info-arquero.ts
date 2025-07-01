@@ -54,4 +54,6 @@ export class InfoArquero implements OnInit {
       console.error('ID del arquero no proporcionado');
     }
   }
+
+  
 }
