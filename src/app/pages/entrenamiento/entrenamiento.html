@@ -1,15 +1,18 @@
 <form class="flex flex-col mx-auto mt-10 items-center">
     <h1 class="text-3xl font-bold">Ingresa datos del entrenamiento 🎯</h1>
     <article class="flex">
-        <section flex class="flex flex-col w-full ml-4">
+        <section class="flex flex-col w-full ml-4">
             <div class="input-and-label-container">
                 <label for="fecha" class="label-form">Fecha:</label>
-                <input type="date" id="fecha" name="fecha" class="input-form"
+                <input [ngModel]="entrenamiento.fecha"
+                  type="date" id="fecha" name="fecha" class="input-form"
                     placeholder="Escribe la fecha del entrenamiento" />
             </div>
             <div class="input-and-label-container w-full">
                 <label for="distancia" class="label-form">Distancia:</label>
-                <select name="distancias" class="input-form">
+                <select [ngModel]="entrenamiento.distancia"
+                    id="distancia"
+                  name="distancias" class="input-form">
                     <option value="distancia18">18</option>
                     <option value="distancia50" selected>50</option>
                     <option value="distancia70">70</option>
@@ -26,32 +29,41 @@
         <!-- Cantidad de flechas -->
         <div class="input-and-label-container">
             <label for="flecha1" class="label-form">Flecha1:</label>
-            <input type="number" id="flecha1" name="flecha1" class="input-form" placeholder="Ingresa el puntaje" min="0" max="10" />
+            <input [ngModel]="entrenamiento.flecha1"
+              type="number" id="flecha1" name="flecha1" class="input-form" placeholder="Ingresa el puntaje" min="0" max="10" />
         </div>
         <div class="input-and-label-container">
             <label for="flecha2" class="label-form">Flecha2:</label>
-            <input type="number" id="flecha2" name="flecha2" class="input-form" placeholder="Ingresa el puntaje" min="0" max="10" />
+            <input [ngModel]="entrenamiento.flecha2"
+              type="number" id="flecha2" name="flecha2" class="input-form" placeholder="Ingresa el puntaje" min="0" max="10" />
         </div>
         <div class="input-and-label-container">
             <label for="flecha3" class="label-form">Flecha3:</label>
-            <input type="number" id="flecha3" name="flecha3" class="input-form" placeholder="Ingresa el puntaje" min="0" max="10" />
+            <input [ngModel]="entrenamiento.flecha3"
+              type="number" id="flecha3" name="flecha3" class="input-form" placeholder="Ingresa el puntaje" min="0" max="10" />
         </div>
         <div class="input-and-label-container">
             <label for="flecha4" class="label-form">Flecha4:</label>
-            <input type="number" id="flecha4" name="flecha4" class="input-form" placeholder="Ingresa el puntaje" min="0" max="10"/>
+            <input [ngModel]="entrenamiento.flecha4"
+              type="number" id="flecha4" name="flecha4" class="input-form" placeholder="Ingresa el puntaje" min="0" max="10"/>
         </div>
         <div class="input-and-label-container">
             <label for="flecha5" class="label-form">Flecha5:</label>
-            <input type="number" id="flecha5" name="flecha5" class="input-form" placeholder="Ingresa el puntaje" min="0" max="10" />
+            <input [ngModel]="entrenamiento.flecha5"
+              type="number" id="flecha5" name="flecha5" class="input-form" placeholder="Ingresa el puntaje" min="0" max="10" />
         </div>
         <div class="input-and-label-container">
             <label for="flecha6" class="label-form">Flecha6:</label>
-            <input type="number" id="flecha6" name="flecha6" class="input-form" placeholder="Ingresa el puntaje" min="0" max="10"/>
+            <input [ngModel]="entrenamiento.flecha6"
+              type="number" id="flecha6" name="flecha6" class="input-form" placeholder="Ingresa el puntaje" min="0" max="10"/>
         </div>
     </article>
     <article class="">
-        <button type="submit" class="submit-form-button-blue">
-            Registrar competencia
+        <button type="submit" class="submit-form-button-blue"
+
+        (click)="guardarEntrenamiento()"
+        >
+            Registrar entrenamiento
         </button>
     </article>
 </form>
