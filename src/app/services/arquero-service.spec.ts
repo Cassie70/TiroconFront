@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { TiroconApi } from './tirocon-api';
+import { ArqueroService } from './arquero-service';
 
-describe('TiroconApi', () => {
-  let service: TiroconApi;
+describe('ArqueroService', () => {
+  let service: ArqueroService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(TiroconApi);
+    service = TestBed.inject(ArqueroService);
   });
 
   it('should be created', () => {

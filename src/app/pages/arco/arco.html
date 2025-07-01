@@ -4,7 +4,8 @@
     <section flex class="flex flex-col w-full ml-4">
       <div class ="input-and-label-container">
         <label for="tipo" class="label-form">Tipo:</label>
-        <select name="tipo" id="tipo" class="input-form">
+        <select [(ngModel)]="arco.tipo"
+          name="tipo" id="tipo" class="input-form">
           <option value="recurvo">Recurvo</option>
           <option value="compuesto">Compuesto</option>
           <option value="barebow">Barebow</option>
@@ -12,7 +13,7 @@
       </div>
       <div class="input-and-label-container">
         <label for="marca" class="label-form">Marca:</label>
-        <input
+        <input [(ngModel)]="arco.marca"
           type="text"
           id="marca"
           name="marca"
@@ -22,7 +23,7 @@
       </div>
       <div class="input-and-label-container">
         <label for="libraje" class="label-form">Libraje:</label>
-        <input
+        <input [(ngModel)]="arco.libraje"
           type="number"
           id="libraje"
           name="libraje"
@@ -32,7 +33,7 @@
       </div>
       <div class="input-and-label-container">
         <label for="apertura" class="label-form">Apertura:</label>
-        <input
+        <input [(ngModel)]="arco.apertura"
           type="number"
           id="apertura"
           name="apertura"
@@ -42,7 +43,7 @@
       </div>
       <div class="input-and-label-container">
         <label for="peso" class="label-form">Peso:</label>
-        <input
+        <input [(ngModel)]="arco.peso"
           type="number"
           id="peso"
           name="peso"
@@ -56,7 +57,8 @@
   <article class="">
     <button
       type="submit"
-      class="submit-form-button-blue"
+      class="submit-form-button-yellow"
+      (click)="guardarArco()"
     >
       Registrar un nuevo arco
     </button>

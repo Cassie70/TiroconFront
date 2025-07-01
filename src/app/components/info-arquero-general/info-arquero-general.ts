@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ArqueroModel } from '../../services/arquero.model';
 
 @Component({
   selector: 'app-info-arquero-general',
@@ -7,8 +8,16 @@ import { Component } from '@angular/core';
   styleUrl: './info-arquero-general.css'
 })
 export class InfoArqueroGeneral {
-  nombre: string = 'Ratauster';
-  marcaPersonal: number = 5;
-  categoria: string = 'Arquero';
-  asociacion: string = 'Raton';
+  @Input() arquero: ArqueroModel = {
+    idArquero: 0,
+    nombre: '',
+    apellido: '',
+    marcaPersonal: 0,
+    categoria: '',
+    asociacion: '',
+    arcos: [],
+    entrenamientos: [],
+    competencias: []
+  };
+
 }

@@ -16,5 +16,5 @@ export const routes: Routes = [
   {path: 'entrenamiento', component: Entrenamiento},
   {path: 'arco', component: Arco},
   {path: 'invitar', component: Invitar},
-  {path: 'info-arquero', component: InfoArquero}
+  {path: 'info-arquero/:idArquero', component: InfoArquero}
 ];
