@@ -4,7 +4,14 @@
   <article class="w-full mt-4 max-w-2xl">
     <input [(ngModel)] ="inputValue" type="text" class="border border-gray-300 rounded p-2  mt-4 w-full" placeholder="Escribe el nombre del arquero...">
 
-    <app-info-card-simple class="mt-5 w-full"></app-info-card-simple>
+    @if(arqueros.length > 0) {
+        @for(arquero of arqueros; track $index) {
+          <app-info-card-simple [arquero] ="arquero" class="mt-4"></app-info-card-simple>
+        }
+    } @else {
+      <p class="mt-4 text-gray-500">No se encontraron arqueros.</p>
+    }
+
   </article>
 
   <article class="flex flex-col w-full max-w-2xl mt-5 mb-4">

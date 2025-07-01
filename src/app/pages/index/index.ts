@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { InfoCardSimple } from "../../components/info-card-simple/info-card-simple";
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { ArqueroService } from '../../services/arquero-service';
+import { ChangeDetectorRef } from '@angular/core';
+import { ArqueroModel } from '../../services/arquero.model';
 
 @Component({
   selector: 'app-index',
@@ -12,13 +15,21 @@ import { RouterLink } from '@angular/router';
 export class Index {
 
   inputValue: string = '';
-/*
-  constructor(private apiSerive: TiroconApi){}
+  arqueros: ArqueroModel[] = [];
+
+  constructor(private service: ArqueroService, private cdr: ChangeDetectorRef){}
 
   ngOnInit(): void {
-    this.apiSerive.getAllArchers().subscribe(archers => {
-      console.log(archers);
+    this.service.getAll().subscribe({
+      next: (data) => {
+        this.arqueros = data;
+        console.log('Datos recibidos:', data);
+        this.cdr.detectChanges();
+      },
+      error: (error) => {
+        console.error('Error al obtener los datos:', error);
+      }
     });
   }
-    */
+
 }
