@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { TiroconApi } from './tirocon-api';
+import { CompetenciaService } from './competencia-service';
 
-describe('TiroconApi', () => {
-  let service: TiroconApi;
+describe('CompetenciaService', () => {
+  let service: CompetenciaService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(TiroconApi);
+    service = TestBed.inject(CompetenciaService);
   });
 
   it('should be created', () => {

@@ -3,8 +3,16 @@
   <article class="flex">
     <section flex class="flex flex-col w-full ml-4">
       <div class ="input-and-label-container">
+        <label for="nombre" class="label-form">Nombre de la Competencia:</label>
+        <input [(ngModel)]="competencia.nombre"
+          type="text"
+          id="nombre"
+          name="nombre"
+          class="input-form"
+          placeholder="Escribe el nombre de la competencia"
+        />
         <label for="fechaInicio" class="label-form">Fecha de Inicio:</label>
-        <input
+        <input [(ngModel)]="competencia.fechaInicio"
           type="date"
           id="fechaInicio"
           name="fechaInicio"
@@ -14,7 +22,7 @@
       </div>
       <div class="input-and-label-container">
         <label for="fechaTermino" class="label-form">Fecha de Termino:</label>
-        <input
+        <input [(ngModel)]="competencia.fechaTermino"
           type="date"
           id="fechaTermino"
           name="fechaTermino"
@@ -24,7 +32,7 @@
       </div>
       <div class="input-and-label-container">
         <label for="puntaje" class="label-form">Puntaje:</label>
-        <input
+        <input [(ngModel)]="competencia.puntajeClasificatorio"
           type="number"
           id="puntaje"
           name="puntaje"
@@ -34,7 +42,7 @@
       </div>
       <div class="input-and-label-container">
         <label for="posicion" class="label-form">Posición:</label>
-        <input
+        <input [(ngModel)]="competencia.posicionClasificatorio"
           type="number"
           id="posicion"
           name="posicion"
@@ -44,7 +52,7 @@
       </div>
       <div class="input-and-label-container">
         <label for="posicionROI" class="label-form">Posición ROI:</label>
-        <input
+        <input [(ngModel)]="competencia.posicionROI"
           type="number"
           id="posicionROI"
           name="posicionROI"
@@ -54,7 +62,7 @@
       </div>
       <div class="input-and-label-container">
         <label for="maximoROI" class="label-form">Máximo ROI:</label>
-        <input
+        <input [(ngModel)]="competencia.maximoROI"
           type="number"
           id="maximoROI"
           name="maximoROI"
@@ -67,8 +75,8 @@
 
   <article class="">
     <button
-      type="submit"
       class="submit-form-button-blue"
+      (click)="guardarCompetencia()"
     >
       Registrar competencia
     </button>
