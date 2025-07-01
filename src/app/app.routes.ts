@@ -18,6 +18,6 @@ export const routes: Routes = [
   {path: 'arco', component: Arco},
   {path: 'invitar', component: Invitar},
   {path: 'info-arquero/:idArquero', component: InfoArquero},
-  {path: 'editar-arquero', component: EditarArquero} //queda pendiente agregar el idArquero
+  {path: 'editar-arquero/idArquero', component: EditarArquero} //queda pendiente agregar el idArquero
 
 ];
