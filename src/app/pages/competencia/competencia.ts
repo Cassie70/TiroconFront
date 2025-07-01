@@ -21,7 +21,7 @@ export class Competencia {
     posicionROI: 0,
     maximoROI: 0,
     arquero: {
-      idArquero: 201
+      idArquero: 201 //sacar este valor de la url o del servicio
     }
   }
 
