@@ -48,8 +48,11 @@ export class Registro {
       next: (response) => {
         console.log('Arquero registrado exitosamente:', response);
 
-        if (this.imagenSeleccionada) {
-          this.arqueroService.uploadImage(1, this.imagenSeleccionada).subscribe({
+        if (this.imagenSeleccionada && this.imagenSeleccionada instanceof File && this.imagenSeleccionada.size > 0 && this.imagenSeleccionada.type.startsWith('image/')) {
+          //recuperar el ID del arquero registrado
+          const idArquero = response.idArquero;
+          console.log('ID del arquero registrado:', idArquero);
+          this.arqueroService.uploadImage(idArquero!, this.imagenSeleccionada).subscribe({
             next: () => {
               Swal.fire({
                 icon: 'success',

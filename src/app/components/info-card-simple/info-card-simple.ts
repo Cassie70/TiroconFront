@@ -23,4 +23,7 @@ export class InfoCardSimple {
     competencias: []
   };
 
+  cargarImagenPorDefecto(event: any): void {
+    event.target.src = 'logo.png'; // Ruta de la imagen por defecto
+  }
 }

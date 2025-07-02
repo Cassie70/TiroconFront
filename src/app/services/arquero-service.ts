@@ -31,8 +31,8 @@ export class ArqueroService {
     });
   }
 
-  post(arquero: ArqueroDTOModel): Observable<ArqueroDTOModel> {
-    return this.http.post<ArqueroDTOModel>(this.url, JSON.stringify(arquero), {
+  post(arquero: ArqueroDTOModel): Observable<ArqueroModel> {
+    return this.http.post<ArqueroModel>(this.url, JSON.stringify(arquero), {
       headers: this.headers,
     });
   }
@@ -45,5 +45,9 @@ export class ArqueroService {
 
   getImage(id: number): Observable<Blob> {
     return this.http.get(`${this.url}${id}/image`, { responseType: 'blob' });
+  }
+
+  delete(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.url}${id}`);
   }
 }

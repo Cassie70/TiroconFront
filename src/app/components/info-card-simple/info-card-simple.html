@@ -1,7 +1,8 @@
 <a [routerLink]="['/info-arquero',arquero.idArquero]" class="no-underline">
   <article class="flex bg- rounded-lg bg-[var(--color-serulian-30)] h-25 p-2 mt-12">
   <img
-    src="logo.png"
+    [src]="'http://localhost:8080/api/apiArqueros/' + arquero.idArquero + '/image'"
+    (error)="cargarImagenPorDefecto($event)"
     alt="Logo de Ratauster"
     class="w-20 h-20">
   <div class="flex flex-col justify-center ml-6 text-align-center">
