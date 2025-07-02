@@ -21,4 +21,9 @@ export class ArcoService {
     const body = JSON.stringify(arco);
     return this.http.post<ArcoModel>(this.url, body, { headers: this.headers });
   }
+
+  deleteArco(idArco: number): Observable<void> {
+    const deleteUrl = `${this.url}${idArco}`;
+    return this.http.delete<void>(deleteUrl, { headers: this.headers });
+  }
 }
