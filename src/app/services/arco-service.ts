@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class ArcoService {
 
   private http = inject(HttpClient);
-  private url = 'https://tiroconarco.onrender.com/api/apiArcos/';
+  private url = 'http://localhost:8080/api/apiArcos/';
   private headers = new HttpHeaders({
     'Content-Type': 'application/json',
   });

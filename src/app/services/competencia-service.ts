@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class CompetenciaService {
 
   private http = inject(HttpClient);
-  private url = 'https://tiroconarco.onrender.com/api/apiCompetencias/';
+  private url = 'http://localhost:8080/api/apiCompetencias/';
   private headers = new HttpHeaders({
     'Content-Type': 'application/json',
   });

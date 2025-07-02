@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class EntrenamientoService {
 
   private http = inject(HttpClient);
-  private url = 'https://tiroconarco.onrender.com/api/apiEntrenamientos/';
+  private url = 'http://localhost:8080/api/apiEntrenamientos/';
   private headers = new HttpHeaders({
     'Content-Type': 'application/json',
   });

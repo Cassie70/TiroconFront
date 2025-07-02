@@ -10,7 +10,7 @@ import { ArqueroDTOModel } from './arquerodto.model';
 })
 export class ArqueroService {
   private http = inject(HttpClient);
-  private url = 'https://tiroconarco.onrender.com/api/apiArqueros/';
+  private url = 'http://localhost:8080/api/apiArqueros/';
   private headers = {
     'Content-Type': 'application/json',
   };
