@@ -25,4 +25,8 @@ export class ArqueroService {
     return this.http.get<ArqueroModel>(`${this.url}${id}`);
   }
 
+  getPDF(id: number): Observable<Blob> {
+    return this.http.get(`${this.url}generarPdf/${id}`, { responseType: 'blob' });
+  }
+
 }
