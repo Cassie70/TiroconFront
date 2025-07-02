@@ -1,75 +1,51 @@
-<form class="flex flex-col mx-auto mt-10 items-center">
-    <h1 class="text-3xl font-bold">Ingresa datos del entrenamiento 🎯</h1>
-    <!--
-    <article class="flex">
-        <section class="flex flex-col w-full ml-4">
-            <div class="input-and-label-container">
-                <label for="fecha" class="label-form">Fecha:</label>
-                <input [ngModel]="entrenamiento.fecha"
-                  type="date" id="fecha" name="fecha" class="input-form"
-                    placeholder="Escribe la fecha del entrenamiento" />
-            </div>
-            <div class="input-and-label-container w-full">
+<form class="flex flex-col mx-auto mt-10 w-full max-w-xl gap-4 p-4 bg-white rounded-xl shadow" (ngSubmit)="guardar()">
+  <h1 class="text-2xl font-bold text-center">Ingresa datos del entrenamiento 🎯</h1>
 
-                <label for="distancia" class="label-form">Distancia:</label>
+  <label class="flex flex-col">
+    <span class="font-semibold">Fecha:</span>
+    <input type="date" [(ngModel)]="entrenamiento.fecha" name="fecha" class="border p-2 rounded" required>
+  </label>
 
-                <select [ngModel]="entrenamiento."
-                    id="distancia"
-                  name="distancias" class="input-form">
-                    <option value="distancia18">18</option>
-                    <option value="distancia50" selected>50</option>
-                    <option value="distancia70">70</option>
-                </select>
+  <div class="flex justify-between items-center">
+    <h2 class="text-lg font-bold">Distancias</h2>
+    <button type="button" class="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600" (click)="agregarDistancia()">+ Agregar Distancia</button>
+  </div>
 
-            </div>
-        </section>
-    </article>
-    -->
-    <!-- FLECHAS -->
-    <article class="flex flex-col mt-6 w-1/2 m-bo">
-        <h1 class="text-3xl font-bold mt-4 text-center">
-            Series 🏹
-        </h1>
+  @for (distancia of entrenamiento.distancias; track distancia) {
+    <div class="border p-3 rounded flex flex-col gap-2 bg-gray-50">
+      <div class="flex justify-between items-center">
+        <span class="font-semibold">Distancia #{{ entrenamiento.distancias.indexOf(distancia) + 1 }}</span>
+        <button type="button" class="text-red-500" (click)="eliminarDistancia(entrenamiento.distancias.indexOf(distancia))">🗑️</button>
+      </div>
 
-        <!-- Cantidad de flechas -->
-         <!--
-        <div class="input-and-label-container">
-            <label for="flecha1" class="label-form">Flecha1:</label>
-            <input [ngModel]="entrenamiento.flecha1"
-              type="number" id="flecha1" name="flecha1" class="input-form" placeholder="Ingresa el puntaje" min="0" max="10" />
-        </div>
-        <div class="input-and-label-container">
-            <label for="flecha2" class="label-form">Flecha2:</label>
-            <input [ngModel]="entrenamiento.flecha2"
-              type="number" id="flecha2" name="flecha2" class="input-form" placeholder="Ingresa el puntaje" min="0" max="10" />
-        </div>
-        <div class="input-and-label-container">
-            <label for="flecha3" class="label-form">Flecha3:</label>
-            <input [ngModel]="entrenamiento.flecha3"
-              type="number" id="flecha3" name="flecha3" class="input-form" placeholder="Ingresa el puntaje" min="0" max="10" />
-        </div>
-        <div class="input-and-label-container">
-            <label for="flecha4" class="label-form">Flecha4:</label>
-            <input [ngModel]="entrenamiento.flecha4"
-              type="number" id="flecha4" name="flecha4" class="input-form" placeholder="Ingresa el puntaje" min="0" max="10"/>
-        </div>
-        <div class="input-and-label-container">
-            <label for="flecha5" class="label-form">Flecha5:</label>
-            <input [ngModel]="entrenamiento.flecha5"
-              type="number" id="flecha5" name="flecha5" class="input-form" placeholder="Ingresa el puntaje" min="0" max="10" />
-        </div>
-        <div class="input-and-label-container">
-            <label for="flecha6" class="label-form">Flecha6:</label>
-            <input [ngModel]="entrenamiento.flecha6"
-              type="number" id="flecha6" name="flecha6" class="input-form" placeholder="Ingresa el puntaje" min="0" max="10"/>
-        </div>
-        -->
-    </article>
-      <article class="">
-        <button type="submit" class="submit-form-button-blue"
+      <label class="flex flex-col">
+        <span class="text-sm">Metros:</span>
+        <input type="number" [(ngModel)]="distancia.metros" name="metros{{ entrenamiento.distancias.indexOf(distancia) }}" class="border p-2 rounded" required>
+      </label>
 
-        >
-            Registrar entrenamiento
-        </button>
-    </article>
+      <div class="flex justify-between items-center mt-2">
+        <span class="font-semibold">Series</span>
+        <button type="button" class="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600" (click)="agregarSerie(distancia)">+ Agregar Serie</button>
+      </div>
+
+      @for (serie of distancia.series; track serie) {
+        <div class="border p-2 rounded bg-white">
+          <div class="flex justify-between items-center">
+            <span class="text-sm font-semibold">Serie #{{ distancia.series.indexOf(serie) + 1 }}</span>
+            <button type="button" class="text-red-400" (click)="eliminarSerie(distancia, distancia.series.indexOf(serie))">🗑️</button>
+          </div>
+          <div class="grid grid-cols-3 gap-2 mt-1">
+            <input type="number" [(ngModel)]="serie.flecha1" name="flecha1_{{ distancia.idDistancia }}_{{ serie.idSerie }}" placeholder="Flecha 1" class="border p-1 rounded">
+            <input type="number" [(ngModel)]="serie.flecha2" name="flecha2_{{ distancia.idDistancia }}_{{ serie.idSerie }}" placeholder="Flecha 2" class="border p-1 rounded">
+            <input type="number" [(ngModel)]="serie.flecha3" name="flecha3_{{ distancia.idDistancia }}_{{ serie.idSerie }}" placeholder="Flecha 3" class="border p-1 rounded">
+            <input type="number" [(ngModel)]="serie.flecha4" name="flecha4_{{ distancia.idDistancia }}_{{ serie.idSerie }}" placeholder="Flecha 4" class="border p-1 rounded">
+            <input type="number" [(ngModel)]="serie.flecha5" name="flecha5_{{ distancia.idDistancia }}_{{ serie.idSerie }}" placeholder="Flecha 5" class="border p-1 rounded">
+            <input type="number" [(ngModel)]="serie.flecha6" name="flecha6_{{ distancia.idDistancia }}_{{ serie.idSerie }}" placeholder="Flecha 6" class="border p-1 rounded">
+          </div>
+        </div>
+      }
+    </div>
+  }
+
+  <button type="submit" class="bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700 mt-4">Guardar Entrenamiento</button>
 </form>
