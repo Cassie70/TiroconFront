@@ -21,4 +21,9 @@ export class CompetenciaService {
     const body = JSON.stringify(competencia);
     return this.http.post<CompetenciaModel>(this.url, body, { headers: this.headers });
   }
+
+  deleteCompetencia(idCompetencia: number): Observable<void> {
+    const deleteUrl = `${this.url}${idCompetencia}`;
+    return this.http.delete<void>(deleteUrl, { headers: this.headers });
+  }
 }

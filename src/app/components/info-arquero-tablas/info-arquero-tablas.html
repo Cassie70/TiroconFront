@@ -21,7 +21,7 @@
 
    @for (entrenamiento of arquero.entrenamientos ;track $index){<app-card-entrenamiento [entrenamiento]="entrenamiento"></app-card-entrenamiento>}
   @for (arco of arquero.arcos ;track $index){<app-card-arco [arco]="arco"></app-card-arco>}
-@for (competencia of arquero.competencias ;track $index){<app-card-competencia></app-card-competencia>}
+@for (competencia of arquero.competencias ;track $index){<app-card-competencia [competencia]="competencia"></app-card-competencia>}
 
 
 

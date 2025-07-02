@@ -16,14 +16,14 @@ export class Arco implements OnInit {
   @Input() idArquero?: number;
 
   arco: ArcoModel = {
-    idArco: 0,
+    idArco: undefined,
     tipo: '',
     marca: '',
     libraje: 0,
     apertura: 0,
     peso: 0,
     arquero: {
-      idArquero: 201
+      idArquero: 0
     }
   }
 

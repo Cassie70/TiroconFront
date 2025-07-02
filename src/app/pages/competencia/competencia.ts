@@ -1,5 +1,5 @@
 import { CompetenciaService } from '../../services/competencia-service';
-import { Component } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { CompetenciaModel } from '../../services/competencia.model';
@@ -10,10 +10,11 @@ import { CompetenciaModel } from '../../services/competencia.model';
   templateUrl: './competencia.html',
   styleUrl: './competencia.css'
 })
-export class Competencia {
+export class Competencia implements OnInit{
+  @Input() idArquero?: number;
 
   competencia: CompetenciaModel = {
-    idCompetencia: 0,
+    idCompetencia: undefined,
     nombre: '',
     fechaInicio: '',
     fechaTermino: '',
@@ -22,7 +23,17 @@ export class Competencia {
     posicionROI: 0,
     maximoROI: 0,
     arquero: {
-      idArquero: 201 //sacar este valor de la url o del servicio
+      idArquero: 0
+    }
+  }
+
+  ngOnInit(): void {
+    console.log('ID del arquero:', this.idArquero);
+
+    if (this.idArquero) {
+      this.competencia.arquero.idArquero = this.idArquero;
+    } else {
+      console.error('ID del arquero no proporcionado');
     }
   }
 

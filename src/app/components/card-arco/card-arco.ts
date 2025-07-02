@@ -26,6 +26,10 @@ export class CardArco {
 
   deleteArco(): void {
     console.log('Eliminando arco con ID:', this.arco.idArco);
+    if (!this.arco.idArco || this.arco.idArco <= 0) {
+      console.error('ID de arco inválido:', this.arco.idArco);
+      return;
+    }
     this.arcoService.deleteArco(this.arco.idArco).subscribe({
       next: () => {
         console.log('Arco eliminado exitosamente');
