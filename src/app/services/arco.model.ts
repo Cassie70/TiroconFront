@@ -6,6 +6,6 @@ export interface ArcoModel{
   apertura: number;
   peso: number;
   arquero: {
-    idArquero: number;
+    idArquero?: number;
   }
 }
