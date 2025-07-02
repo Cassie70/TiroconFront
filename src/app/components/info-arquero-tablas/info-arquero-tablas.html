@@ -1,31 +1,55 @@
 <article class="grid grid-cols-1 md:grid-cols-3 gap-6 justify-center px-32">
   <div class="flex flex-col justify-center mx-6 text-align-center">
-    <a [routerLink]="['/entrenamiento',arquero.idArquero]" class="submit-form-button-blue">
-        Registrar un entrenamiento
+    <a
+      [routerLink]="['/entrenamiento', arquero.idArquero]"
+      class="submit-form-button-blue"
+    >
+      Registrar un entrenamiento
     </a>
   </div>
   <div class="flex flex-col justify-center mx-6 text-align-center">
-    <a [routerLink]="['/arco',arquero.idArquero]" class="submit-form-button-yellow">
-        Registrar un nuevo arco
+    <a
+      [routerLink]="['/arco', arquero.idArquero]"
+      class="submit-form-button-yellow"
+    >
+      Registrar un nuevo arco
     </a>
   </div>
   <div class="flex flex-col justify-center mx-6 text-align-center">
-    <a  [routerLink]="['/competencia',arquero.idArquero]" class="submit-form-button-black">
-        Registrar una nueva competencia
+    <a
+      [routerLink]="['/competencia', arquero.idArquero]"
+      class="submit-form-button-black"
+    >
+      Registrar una nueva competencia
     </a>
   </div>
 </article>
 
+<article
+  class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-12 justify-center px-32"
+>
+  <!-- Columna de Entrenamientos -->
+  <div class="flex flex-col gap-4">
+    @for (entrenamiento of arquero.entrenamientos; track $index) {
+    <app-card-entrenamiento
+      [entrenamiento]="entrenamiento"
+    ></app-card-entrenamiento>
+    }
+  </div>
 
-<article class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-12 justify-center px-32 ">
+  <!-- Columna de Arcos -->
+  <div class="flex flex-col gap-4">
+    @for (arco of arquero.arcos; track $index) {
+    <app-card-arco [arco]="arco" (arcoEliminado)="onArcoEliminado($event)"></app-card-arco>
+    }
+  </div>
 
-   @for (entrenamiento of arquero.entrenamientos ;track $index){<app-card-entrenamiento [entrenamiento]="entrenamiento"></app-card-entrenamiento>}
-  @for (arco of arquero.arcos ;track $index){<app-card-arco [arco]="arco"></app-card-arco>}
-@for (competencia of arquero.competencias ;track $index){<app-card-competencia [competencia]="competencia"></app-card-competencia>}
-
-
-
+  <!-- Columna de Competencias -->
+  <div class="flex flex-col gap-4">
+    @for (competencia of arquero.competencias; track $index) {
+    <app-card-competencia [competencia]="competencia"
+      (competenciaEliminada)="onCompetenciaEliminada($event)" >
+    </app-card-competencia>
+    }
+  </div>
 </article>
-
-
-

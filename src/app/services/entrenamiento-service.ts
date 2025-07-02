@@ -21,4 +21,9 @@ export class EntrenamientoService {
     const body = JSON.stringify(entrenamiento);
     return this.http.post<EntrenamientoModel>(this.url, body, { headers: this.headers });
   }
+
+  deleteEntrenamiento(idEntrenamiento: number): Observable<void> {
+    console.log('Eliminando entrenamiento con ID:', idEntrenamiento);
+    return this.http.delete<void>(`${this.url}${idEntrenamiento}`, { headers: this.headers });
+  }
 }

@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ArcoModel } from '../../services/arco.model';
 import { ArcoService } from '../../services/arco-service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -20,24 +21,42 @@ export class CardArco {
     arquero: {
       idArquero: 0
     }
-  }
+  };
+
+  @Output() arcoEliminado = new EventEmitter<number>();
 
   constructor(private arcoService: ArcoService) { }
 
   deleteArco(): void {
-    console.log('Eliminando arco con ID:', this.arco.idArco);
     if (!this.arco.idArco || this.arco.idArco <= 0) {
       console.error('ID de arco inválido:', this.arco.idArco);
+      Swal.fire('Error', 'El ID del arco no es válido.', 'error');
       return;
     }
-    this.arcoService.deleteArco(this.arco.idArco).subscribe({
-      next: () => {
-        console.log('Arco eliminado exitosamente');
-      },
-      error: (error) => {
-        console.error('Error al eliminar arco:', error);
+
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: "¡No podrás deshacer esta acción!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, eliminar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.arcoService.deleteArco(this.arco.idArco!).subscribe({
+          next: () => {
+            console.log('Arco eliminado exitosamente');
+            this.arcoEliminado.emit(this.arco.idArco!);
+            Swal.fire('¡Eliminado!', 'El arco ha sido eliminado.', 'success');
+          },
+          error: (error) => {
+            console.error('Error al eliminar arco:', error);
+            Swal.fire('Error', 'Hubo un problema al eliminar el arco.', 'error');
+          }
+        });
       }
     });
   }
-
 }

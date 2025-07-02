@@ -3,19 +3,19 @@ import { HttpClient } from '@angular/common/http';
 import { inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ArqueroModel } from './arquero.model';
+import { ArqueroDTOModel } from './arquerodto.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ArqueroService {
-
   private http = inject(HttpClient);
   private url = 'https://tiroconarco.onrender.com/api/apiArqueros/';
   private headers = {
     'Content-Type': 'application/json',
   };
 
-  constructor() { }
+  constructor() {}
 
   getAll(): Observable<ArqueroModel[]> {
     return this.http.get<ArqueroModel[]>(this.url);
@@ -26,7 +26,24 @@ export class ArqueroService {
   }
 
   getPDF(id: number): Observable<Blob> {
-    return this.http.get(`${this.url}generarPdf/${id}`, { responseType: 'blob' });
+    return this.http.get(`${this.url}generarPdf/${id}`, {
+      responseType: 'blob',
+    });
   }
 
+  post(arquero: ArqueroDTOModel): Observable<ArqueroDTOModel> {
+    return this.http.post<ArqueroDTOModel>(this.url, JSON.stringify(arquero), {
+      headers: this.headers,
+    });
+  }
+
+  uploadImage(id: number, image: File): Observable<any> {
+    const formData = new FormData();
+    formData.append('image', image);
+    return this.http.post(`${this.url}${id}/image`, formData);
+  }
+
+  getImage(id: number): Observable<Blob> {
+    return this.http.get(`${this.url}${id}/image`, { responseType: 'blob' });
+  }
 }

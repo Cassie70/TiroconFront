@@ -1,23 +1,43 @@
- <div class="bg-white rounded-lg shadow-md p-6">
-    <h2 class="text-2xl font-bold mb-4">Competencia {{competencia.idCompetencia}}</h2>
-    <div class="space-y-4">
-      <div class="flex-col">
-        <!--Icono de basura-->
-        <button class="text-red-500 hover:text-red-700 focus:outline-none" (click)="deleteCompetencia()">
-          Borrar <i class="fas fa-trash-alt"></i>
-        </button>
-      </div>
-      <div>
-        <h2 class="font-light"> </h2>
-        <!--Informacion de la competencia-->
-        <p class="text-gray-700">ID: <span class="font-semibold">{{ competencia.idCompetencia }}</span></p>
-        <p class="text-gray-700">Nombre: <span class="font-semibold">{{ competencia.nombre }}</span></p>
-        <p class="text-gray-700">FechaInicio: <span class="font-semibold">{{ competencia.fechaInicio}}</span></p>
-        <p class="text-gray-700">FechaTermino: <span class="font-semibold">{{ competencia.fechaTermino}}</span></p>
-        <p class="text-gray-700">Puntaje Clasificatorio: <span class="font-semibold">{{ competencia.puntajeClasificatorio }}</span></p>
-        <p class="text-gray-700">Posicion Clasificatorio: <span class="font-semibold">{{ competencia.posicionClasificatorio }}</span></p>
-        <p class="text-gray-700">Posicion ROI: <span class="font-semibold">{{ competencia.posicionROI }}</span></p>
-        <p class="text-gray-700">Maximo ROI: <span class="font-semibold">{{ competencia.maximoROI }}</span></p>
-      </div>
+<div class="bg-white rounded-lg shadow-md p-6">
+  <div class="flex justify-between items-center mb-4">
+    <h2 class="text-2xl font-bold">Arco {{ competencia.idCompetencia }}</h2>
+    <button class="cursor-pointer text-3xl" (click)="deleteCompetencia()">
+      🗑️
+    </button>
   </div>
- </div>
+  <div>
+    <h2 class="font-light"></h2>
+    <!--Informacion de la competencia-->
+    <p class="text-gray-700">
+      ID: <span class="font-semibold">{{ competencia.idCompetencia }}</span>
+    </p>
+    <p class="text-gray-700">
+      Nombre: <span class="font-semibold">{{ competencia.nombre }}</span>
+    </p>
+    <p class="text-gray-700">
+      FechaInicio:
+      <span class="font-semibold">{{ competencia.fechaInicio }}</span>
+    </p>
+    <p class="text-gray-700">
+      FechaTermino:
+      <span class="font-semibold">{{ competencia.fechaTermino }}</span>
+    </p>
+    <p class="text-gray-700">
+      Puntaje Clasificatorio:
+      <span class="font-semibold">{{ competencia.puntajeClasificatorio }}</span>
+    </p>
+    <p class="text-gray-700">
+      Posicion Clasificatorio:
+      <span class="font-semibold">{{
+        competencia.posicionClasificatorio
+      }}</span>
+    </p>
+    <p class="text-gray-700">
+      Posicion ROI:
+      <span class="font-semibold">{{ competencia.posicionROI }}</span>
+    </p>
+    <p class="text-gray-700">
+      Maximo ROI: <span class="font-semibold">{{ competencia.maximoROI }}</span>
+    </p>
+  </div>
+</div>

@@ -1,4 +1,8 @@
-<form class="flex flex-col mx-auto mt-10 items-center max-w-xl">
+<form
+  class="flex flex-col mx-auto mt-10 items-center max-w-xl"
+  (ngSubmit)="guardarArquero()"
+  #form="ngForm"
+>
   <h1 class="text-3xl font-bold">Ingresa Datos Personales 🎯</h1>
   <article class="flex flex-col md:flex-row mt-4 w-full">
     <div class="flex flex-col items-center">
@@ -9,6 +13,7 @@
       />
       <input
         type="file"
+        (change)="onFileSelected($event)"
         class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-[var(--color-selective-yellow)] file:text-black hover:file:bg-[var(--color-selective-yellow-hover)] mt-4"
       />
     </div>
@@ -18,11 +23,13 @@
       <div class="input-and-label-container">
         <label for="nombre" class="label-form">Nombre:</label>
         <input
+          [(ngModel)]="arquero.nombre"
+          name="nombre"
           type="text"
           id="nombre"
-          name="nombre"
           class="input-form"
           placeholder="Escribe tu nombre"
+          required
         />
       </div>
 
@@ -30,110 +37,47 @@
       <div class="input-and-label-container">
         <label for="apellido" class="label-form">Apellido:</label>
         <input
+          [(ngModel)]="arquero.apellido"
+          name="apellido"
           type="text"
           id="apellido"
-          name="apellido"
           class="input-form"
           placeholder="Escribe tu apellido"
+          required
         />
       </div>
 
-      <!-- Email -->
+      <!-- Categoría -->
       <div class="input-and-label-container">
-        <label for="email" class="label-form">Categoría:</label>
+        <label for="categoria" class="label-form">Categoría:</label>
         <input
-          type="categoria"
-          id="categoria"
+          [(ngModel)]="arquero.categoria"
           name="categoria"
+          type="text"
+          id="categoria"
           class="input-form"
-          placeholder="Escribe tu categoria"
+          placeholder="Escribe tu categoría"
+          required
         />
       </div>
 
-      <!-- Asociacion -->
-       <div class="input-and-label-container">
+      <!-- Asociación -->
+      <div class="input-and-label-container">
         <label for="asociacion" class="label-form">Asociación:</label>
         <input
+          [(ngModel)]="arquero.asociacion"
+          name="asociacion"
           type="text"
           id="asociacion"
-          name="asociacion"
           class="input-form"
           placeholder="Escribe tu asociación"
-        />  
+          required
+        />
       </div>
     </section>
   </article>
 
-  <article class="flex flex-col w-full mt-6">
-    <h1 class="text-3xl font-bold mt-4 text-center">
-      Ingresa datos del arco 🏹
-    </h1>
-
-    <!-- Tipo -->
-    <div class="input-and-label-container">
-      <label for="tipo" class="label-form">Tipo:</label>
-      <input
-        type="text"
-        id="tipo"
-        name="tipo"
-        class="input-form"
-        placeholder="Escribe el tipo de arco"
-      />
-    </div>
-
-    <!-- Marca -->
-    <div class="input-and-label-container">
-      <label for="marca" class="label-form">Marca:</label>
-      <input
-        type="text"
-        id="marca"
-        name="marca"
-        class="input-form"
-        placeholder="Escribe la marca del arco"
-      />
-    </div>
-
-    <!-- Libraje -->
-    <div class="input-and-label-container">
-      <label for="libraje" class="label-form">Libraje:</label>
-      <input
-        type="number"
-        id="libraje"
-        name="libraje"
-        class="input-form"
-        placeholder="Escribe el libraje del arco"
-      />
-    </div>
-
-    <!-- Apertura -->
-    <div class="input-and-label-container">
-      <label for="apertura" class="label-form">Apertura:</label>
-      <input
-        type="number"
-        id="apertura"
-        name="apertura"
-        class="input-form"
-        placeholder="Escribe la apertura del arco"
-      />
-    </div>
-
-    <!-- Peso -->
-    <div class="input-and-label-container">
-      <label for="peso" class="label-form">Peso:</label>
-      <input
-        type="number"
-        id="peso"
-        name="peso"
-        class="input-form"
-        placeholder="Escribe el peso del arco"
-      />
-    </div>
-  </article>
-
-  <button
-    type="submit"
-    class="submit-form-button-blue"
-  >
+  <button type="submit" class="submit-form-button-blue mt-4">
     Registrar un nuevo arquero🏹
   </button>
 </form>

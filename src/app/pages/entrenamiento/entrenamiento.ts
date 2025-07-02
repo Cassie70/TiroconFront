@@ -1,16 +1,16 @@
 import { DistanciaModel } from './../../services/distancia.model';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
 import { EntrenamientoService } from '../../services/entrenamiento-service';
 import { EntrenamientoModel } from '../../services/entrenamiento.model';
 import { Input } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { SerieModel } from '../../services/serie.model';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-entrenamiento',
-  imports: [RouterLink, FormsModule],
+  imports: [FormsModule],
   templateUrl: './entrenamiento.html',
   styleUrl: './entrenamiento.css'
 })
@@ -48,7 +48,7 @@ export class Entrenamiento implements OnInit {
 
   agregarSerie(distancia: DistanciaModel) {
     const nuevaSerie: SerieModel = {
-      idSerie: Date.now(),
+      idSerie: undefined,
       flecha1: 0,
       flecha2: 0,
       flecha3: 0,
@@ -69,11 +69,24 @@ export class Entrenamiento implements OnInit {
       next: (response) => {
         console.log('Entrenamiento guardado exitosamente:', response);
         // Aquí puedes redirigir o mostrar un mensaje de éxito
+        Swal.fire({
+          icon: 'success',
+          title: 'Entrenamiento guardado',
+          text: 'El entrenamiento se ha guardado correctamente.',
+          confirmButtonColor: '#3085d6',
+        });
+
       }
       ,
       error: (error) => {
         console.error('Error al guardar el entrenamiento:', error);
         // Aquí puedes manejar el error, mostrar un mensaje, etc.
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'Hubo un error al guardar el entrenamiento. Por favor, intenta nuevamente.',
+          confirmButtonColor: '#d33',
+        });
       }
     });
   }
