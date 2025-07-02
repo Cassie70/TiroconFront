@@ -1,11 +1,42 @@
- <div class="bg-white rounded-lg shadow-md p-6">
-    <h2 class="text-2xl font-bold mb-4">Entrenamientos</h2>
-    <div class="space-y-4">
-      <div>
-        <h3 class="font-semibold text-lg">Entrenamiento ID</h3>
+<div class="bg-white rounded-2xl shadow-lg p-6 max-w-4xl mx-auto">
+  <h2 class="text-2xl font-bold mb-6 text-center text-indigo-700">
+    Entrenamiento {{ entrenamiento.idEntrenamiento }} ({{ entrenamiento.fecha }})
+  </h2>
+
+  @for (distancia of entrenamiento.distancias; track distancia) {
+    <div class="mb-8">
+      <h3 class="text-xl font-semibold mb-4 text-indigo-600">
+        Distancia {{ distancia.metros }} m
+      </h3>
+
+      <div class="overflow-x-auto rounded-lg shadow">
+        <table class="min-w-full divide-y divide-gray-200">
+          <thead class="bg-indigo-600 text-white">
+            <tr>
+              <th class="px-4 py-2 text-left text-sm font-medium">ID</th>
+              <th class="px-4 py-2 text-center text-sm font-medium">1</th>
+              <th class="px-4 py-2 text-center text-sm font-medium">2</th>
+              <th class="px-4 py-2 text-center text-sm font-medium">3</th>
+              <th class="px-4 py-2 text-center text-sm font-medium">4</th>
+              <th class="px-4 py-2 text-center text-sm font-medium">5</th>
+              <th class="px-4 py-2 text-center text-sm font-medium">6</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200 bg-white">
+            @for (serie of distancia.series; track serie) {
+              <tr class="hover:bg-indigo-50 transition-colors">
+                <td class="px-4 py-2 text-sm text-gray-800">{{ serie.idSerie }}</td>
+                <td class="px-4 py-2 text-center text-sm">{{ serie.flecha1 }}</td>
+                <td class="px-4 py-2 text-center text-sm">{{ serie.flecha2 }}</td>
+                <td class="px-4 py-2 text-center text-sm">{{ serie.flecha3 }}</td>
+                <td class="px-4 py-2 text-center text-sm">{{ serie.flecha4 }}</td>
+                <td class="px-4 py-2 text-center text-sm">{{ serie.flecha5 }}</td>
+                <td class="px-4 py-2 text-center text-sm">{{ serie.flecha6 }}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
       </div>
-        <div>
-        <h2 class="font-light"> </h2>
-      </div> 
     </div>
-  </div>
+  }
+</div>

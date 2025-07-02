@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { EntrenamientoModel } from '../../services/entrenamiento.model';
 
 @Component({
   selector: 'app-card-entrenamiento',
@@ -8,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class CardEntrenamiento {
 
+  @Input() entrenamiento: EntrenamientoModel = {
+    idEntrenamiento: 0,
+    fecha: '',
+    distancias: [],
+    arquero: {
+      idArquero: 0
+    }
+  }
 }

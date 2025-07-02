@@ -13,6 +13,7 @@ import { CompetenciaModel } from '../../services/competencia.model';
 export class Competencia {
 
   competencia: CompetenciaModel = {
+    idCompetencia: 0,
     nombre: '',
     fechaInicio: '',
     fechaTermino: '',

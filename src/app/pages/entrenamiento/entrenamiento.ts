@@ -12,44 +12,6 @@ import { OnInit } from '@angular/core';
   templateUrl: './entrenamiento.html',
   styleUrl: './entrenamiento.css'
 })
-export class Entrenamiento implements OnInit{
-  @Input() idArquero?: number;
+export class Entrenamiento  {
 
-  entrenamiento: EntrenamientoModel = {
-    fecha: '',
-    distancia: 0,
-    flecha1: 0,
-    flecha2: 0,
-    flecha3: 0,
-    flecha4: 0,
-    flecha5: 0,
-    flecha6: 0,
-    arquero: {
-      idArquero: 201 // ID del arquero, puede ser dinámico según tu aplicación
-    }
-  }
-
-  ngOnInit(): void {
-    console.log('ID del arquero:', this.idArquero);
-
-    if (this.idArquero) {
-      this.entrenamiento.arquero.idArquero = this.idArquero;
-    } else {
-      console.error('ID del arquero no proporcionado');
-    }
-  }
-
-    constructor(private entrenamientoService: EntrenamientoService) { }
-
-    guardarEntrenamiento(): void {
-    console.log('Datos del entrenamiento:', this.entrenamiento);
-    this.entrenamientoService.postEntrenamiento(this.entrenamiento).subscribe({
-      next: (response) => {
-        console.log('Entrenamiento registrado exitosamente:', response);
-      },
-      error: (error) => {
-        console.error('Error al registrar entrenamiento:', error);
-      }
-    });
-  }
 }

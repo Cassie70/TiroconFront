@@ -1,5 +1,6 @@
 <form class="flex flex-col mx-auto mt-10 items-center">
     <h1 class="text-3xl font-bold">Ingresa datos del entrenamiento 🎯</h1>
+    <!--
     <article class="flex">
         <section class="flex flex-col w-full ml-4">
             <div class="input-and-label-container">
@@ -9,17 +10,21 @@
                     placeholder="Escribe la fecha del entrenamiento" />
             </div>
             <div class="input-and-label-container w-full">
+
                 <label for="distancia" class="label-form">Distancia:</label>
-                <select [ngModel]="entrenamiento.distancia"
+
+                <select [ngModel]="entrenamiento."
                     id="distancia"
                   name="distancias" class="input-form">
                     <option value="distancia18">18</option>
                     <option value="distancia50" selected>50</option>
                     <option value="distancia70">70</option>
                 </select>
+
             </div>
         </section>
     </article>
+    -->
     <!-- FLECHAS -->
     <article class="flex flex-col mt-6 w-1/2 m-bo">
         <h1 class="text-3xl font-bold mt-4 text-center">
@@ -27,6 +32,7 @@
         </h1>
 
         <!-- Cantidad de flechas -->
+         <!--
         <div class="input-and-label-container">
             <label for="flecha1" class="label-form">Flecha1:</label>
             <input [ngModel]="entrenamiento.flecha1"
@@ -57,11 +63,11 @@
             <input [ngModel]="entrenamiento.flecha6"
               type="number" id="flecha6" name="flecha6" class="input-form" placeholder="Ingresa el puntaje" min="0" max="10"/>
         </div>
+        -->
     </article>
-    <article class="">
+      <article class="">
         <button type="submit" class="submit-form-button-blue"
 
-        (click)="guardarEntrenamiento()"
         >
             Registrar entrenamiento
         </button>

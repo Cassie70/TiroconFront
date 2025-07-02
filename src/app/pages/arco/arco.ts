@@ -16,6 +16,7 @@ export class Arco implements OnInit {
   @Input() idArquero?: number;
 
   arco: ArcoModel = {
+    idArco: 0,
     tipo: '',
     marca: '',
     libraje: 0,

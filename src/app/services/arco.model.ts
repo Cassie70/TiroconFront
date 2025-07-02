@@ -1,4 +1,5 @@
 export interface ArcoModel{
+  idArco: number;
   tipo: string;
   marca: string;
   libraje: number;
