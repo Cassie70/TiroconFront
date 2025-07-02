@@ -1,5 +1,5 @@
 export interface CompetenciaModel {
-  idCompetencia: number;
+  idCompetencia?: number;
   nombre: string;
   fechaInicio: string;
   fechaTermino: string;

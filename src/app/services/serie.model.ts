@@ -1,5 +1,5 @@
 export interface SerieModel{
-  idSerie: number;
+  idSerie?: number;
   flecha1: number;
   flecha2: number;
   flecha3: number;
@@ -7,6 +7,6 @@ export interface SerieModel{
   flecha5: number;
   flecha6: number;
   distancia: {
-    idDistancia: number;
+    idDistancia?: number;
   };
 }

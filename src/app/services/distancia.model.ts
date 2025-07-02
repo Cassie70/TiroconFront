@@ -1,10 +1,10 @@
 import { SerieModel } from './serie.model';
 
 export interface DistanciaModel {
-  idDistancia: number;
+  idDistancia?: number;
   metros: number;
   entrenamiento: {
-    idEntrenamiento: number;
+    idEntrenamiento?: number;
   }
   series: SerieModel[];
 }
